@@ -23,4 +23,4 @@ jobs:
       - name: Sync to S3
         run: aws s3 sync ./ s3://$S3_BUCKET_NAME --region $AWS_REGION --delete --exclude ".git/*" --exclude ".github/*"
         env:
-          S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
+          S3_BUCKET_NAME: ${{ secrets.AWS_S3_BUCKET_NAME }}
