@@ -3249,7 +3249,7 @@ dauup.com, 34141, RESELLER
 
 
 #DT Exchange
-fyber.com,INSERT PUBLISHER ID,DIRECT
+fyber.com, 220146, DIRECT, 1ad675c9de6b5176
 acd.op.hicloud.com,PUB_HW_1003,RESELLER
 adform.com,2688,RESELLER,9f5210a2f0999e32
 adform.com,2795,RESELLER,9f5210a2f0999e32
