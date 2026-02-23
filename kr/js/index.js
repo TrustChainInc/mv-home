@@ -4,6 +4,30 @@ $(document).ready(function () {
   $("#headers").load("/kr/common/header.html");
   $("#footers").load("/kr/common/footer.html");
 
+  const dialog = document.querySelector('.dialog');
+  const closeBtn = document.querySelector('.popup-bottom-right');
+  const popupCheckbox = document.querySelector('.checkbox');
+  
+  const POPUP_STORAGE_KEY = 'popup_date';
+
+  function getTodayDateString() {
+    const d = new Date();
+    return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+  }
+
+  const today = getTodayDateString();
+
+  if (localStorage.getItem(POPUP_STORAGE_KEY) !== today) {
+    dialog.showModal();
+  }
+
+  closeBtn.addEventListener('click', () => {
+    if (popupCheckbox.checked) {
+      localStorage.setItem(POPUP_STORAGE_KEY, getTodayDateString());
+    }
+    dialog.close();
+  });
+  
   if ($(".main").length === 0) {
     //scroll event;;
     $(window).scroll(function () {

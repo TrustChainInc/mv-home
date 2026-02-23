@@ -753,6 +753,52 @@ table.commonFrame .br {
   overflow: hidden;
 }
 
+.dialog {
+  width: 500px;
+  height: 729px;
+  background-color: #fff;
+  border: 0px;
+  padding: 0;
+}
+
+.popup-img {
+  height: 700px; width: 500px;
+}
+
+.popup-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333333;
+}
+
+.popup-bottom-left {
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+}
+
+.noto-regular {
+  font-size: 12px;
+  color: #fff;
+  line-height: 25px;
+  margin-right: 5px;
+}
+
+.popup-bottom-right {
+  display: flex;
+  align-items: center;
+  padding-right: 15px;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.closeBtn {
+  font-size: 12px;
+  line-height: 25px;
+  color: #fff;
+}
+
 .welcome-page-wrap {
   position: absolute;
   top: 50%;
@@ -819,6 +865,15 @@ table.commonFrame .br {
 }
 
 @media (max-width: 767px) {
+
+  .dialog {
+    width: 340px;
+    height: 509px;
+  }
+
+  .popup-img {
+    height: 480px; width: 340px;
+  }
   .welcome-page {
     height: auto;
   }
