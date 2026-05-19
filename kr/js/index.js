@@ -4,30 +4,39 @@ $(document).ready(function () {
   $("#headers").load("/kr/common/header.html");
   $("#footers").load("/kr/common/footer.html");
 
-  const dialog = document.querySelector('.dialog');
-  const closeBtn = document.querySelector('.popup-bottom-right');
-  const popupCheckbox = document.querySelector('.checkbox');
-  
-  const POPUP_STORAGE_KEY = 'popup_date';
+  const dialog = document.querySelector(".dialog");
+  const closeBtn = document.querySelector(".popup-bottom-right");
+  const popupCheckbox = document.querySelector(".checkbox");
 
-  function getTodayDateString() {
-    const d = new Date();
-    return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
-  }
+  const POPUP_STORAGE_KEY = "popup_date";
 
-  const today = getTodayDateString();
-
-  if (localStorage.getItem(POPUP_STORAGE_KEY) !== today) {
-    dialog.showModal();
-  }
-
-  closeBtn.addEventListener('click', () => {
-    if (popupCheckbox.checked) {
-      localStorage.setItem(POPUP_STORAGE_KEY, getTodayDateString());
+  if (window.location.pathname === "/") {
+    function getTodayDateString() {
+      const d = new Date();
+      return (
+        d.getFullYear() +
+        "-" +
+        String(d.getMonth() + 1).padStart(2, "0") +
+        "-" +
+        String(d.getDate()).padStart(2, "0")
+      );
     }
-    dialog.close();
-  });
-  
+
+    const today = getTodayDateString();
+    if (localStorage.getItem(POPUP_STORAGE_KEY) !== today && dialog) {
+      dialog.showModal();
+    }
+
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => {
+        if (popupCheckbox.checked) {
+          localStorage.setItem(POPUP_STORAGE_KEY, getTodayDateString());
+        }
+        dialog.close();
+      });
+    }
+  }
+
   if ($(".main").length === 0) {
     //scroll event;;
     $(window).scroll(function () {
@@ -53,13 +62,13 @@ $(document).ready(function () {
   $(".play-store").click(function () {
     window.open(
       "https://play.google.com/store/apps/details?id=com.cordova.mileverse",
-      "_blank"
+      "_blank",
     );
   });
   $(".app-store").click(function () {
     window.open(
       "https://apps.apple.com/kr/app/%EB%A7%88%EC%9D%BC%EB%B2%8C%EC%8A%A4/id1521818622",
-      "_blank"
+      "_blank",
     );
   });
 
@@ -135,5 +144,3 @@ $(document).ready(function () {
     }
   }
 });
-
-
