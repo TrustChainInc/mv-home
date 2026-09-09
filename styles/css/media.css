@@ -93,6 +93,110 @@
   font-family: NotoSansRegular;
 }
 
+.partner .contents-total-wrap {
+  background-color: #fff;
+}
+
+.partner .brand-contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 120px;
+}
+
+.partner .brand-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 56px;
+}
+
+.partner .brand-tab {
+  min-width: 160px;
+  height: 48px;
+  padding: 0 28px;
+  border: 1px solid #dbdbdb;
+  border-radius: 999px;
+  background: #fff;
+  color: #212121;
+  font-size: 16px;
+  font-family: NotoSansMedium;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.partner .brand-tab.active {
+  border-color: #3c007c;
+  background: #3c007c;
+  color: #fff;
+}
+.partner .brand-tab:hover:not(.active) {
+  border-color: #3c007c;
+  color: #3c007c;
+}
+
+.partner .brand-panels {
+  width: 100%;
+}
+
+.partner .brand-panel {
+  display: none;
+}
+.partner .brand-panel.active {
+  display: block;
+}
+
+.partner .brand-logo-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 60px 0px;
+  width: 100%;
+}
+
+.partner .brand-logo-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70px;
+}
+.partner .brand-logo-item img {
+  max-width: 100%;
+  max-height: 64px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+.partner .brand-logo-item img.logo-ddo {
+  max-height: 48px;
+}
+.partner .brand-logo-item img.w140 {
+  width: 140px;
+  height: auto;
+}
+.partner .brand-logo-item img.ellipsis {
+  width: 48px;
+  height: 48px;
+}
+
+.partner .brand-logo-more {
+  gap: 8px;
+}
+.partner .brand-logo-more span {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #212121;
+}
+
+.partner .brand-note {
+  margin-top: 40px;
+  color: #212121;
+  font-size: 14px;
+  font-family: NotoSansRegular;
+  line-height: 22px;
+}
+
 .partner .contents-init-wrap:not(:first-child) {
   margin-top: 130px;
 }
@@ -185,6 +289,35 @@
   }
   .media .contents-init-wrap:last-child {
     margin-bottom: 50px;
+  }
+  .partner .brand-contents {
+    padding-bottom: 60px;
+  }
+  .partner .brand-tabs {
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+  .partner .brand-tab {
+    min-width: 0;
+    height: 40px;
+    padding: 0 16px;
+    font-size: 13px;
+  }
+  .partner .brand-logo-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px 4px;
+  }
+  .partner .brand-logo-item {
+    min-height: 70px;
+    padding: 8px;
+  }
+  .partner .brand-logo-item img {
+    max-height: 48px;
+  }
+  .partner .brand-note {
+    margin-top: 24px;
+    font-size: 12px;
+    line-height: 18px;
   }
   .partner .parnter-wrap {
     width: 48%;
